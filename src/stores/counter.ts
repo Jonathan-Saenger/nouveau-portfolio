@@ -10,3 +10,14 @@ export const useCounterStore = defineStore('counter', () => {
 
   return { count, doubleCount, increment }
 })
+
+export const useMainStore = defineStore('main', {
+  state: () => ({
+    theme: 'light', // Pour mode sombre/clair
+  }),
+  actions: {
+    toggleTheme() {
+      this.theme = this.theme === 'light' ? 'dark' : 'light';
+    },
+  },
+});
